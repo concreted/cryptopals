@@ -10,5 +10,12 @@ class Set1(unittest.TestCase):
 
         self.assertEqual(base64_string, h.hex_to_base64(hex_string))
 
+    def test_2_fixed_xor(self):
+        string_1 = "1c0111001f010100061a024b53535009181c"
+        string_2 = "686974207468652062756c6c277320657965"
+        1_xor_2 = "746865206b696420646f6e277420706c6179"
+
+        self.assertEqual(1_xor_2, h.xor(string_1, string_2))
+
 if __name__ == '__main__':
     unittest.main()
